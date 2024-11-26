@@ -1,42 +1,6 @@
-.home{
-    /* background-color: blue; */
-
-    display: flex;
-
-    /* font-family: Arial, Helvetica, sans-serif; */
-}
-
-.side-content{
-    width: 12%;
-    height: 100%;
-
-    background-color: #252525;
-
-    display: flex;
-    flex-direction: column;
-}
-.logo{
-    /* height: 85px; */
-    min-width: 100px;
-    
-    background-image: url(/public/images/OSU_vertical_2C_W_over_B.png);
-}
-.side-tabs{
-    width: 100%;
-    height: 633px;
-
-    list-style-type: none;
-}
-
-.side-tabs-menu-text{
-    margin-top: 10px;
-    color: white;
-}
-
-.container{
-    width: 88%;
-}
-.top-content{
-    width: 100%;
-    height: 100%;
+a { text-decoration: none; }
+h1{margin: 0;}
+ul{ 
+    padding: 0;
+    margin: 0;
 }

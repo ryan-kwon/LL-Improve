@@ -1,0 +1,46 @@
+.top-content{
+    width: 100%;
+    /* height: 100%; */
+
+    padding: 30px 0px;
+
+    /* width | style | color */
+    box-sizing: border-box;
+    border-bottom: 1px solid #252525;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.top-content-h1{
+    color: #252525;
+    font-weight: bold;
+}
+
+.top-content-icon-container{
+    /* display: flex; */
+    list-style-type: none;
+}
+.top-content-icon-container li{
+    width: 90px;
+    height: 90px;
+    border: 1px solid #252525;
+    border-radius: 50px;
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top-content-icon-container li:not(:last-child) {
+    margin-right: 20px;
+}
+.top-content-icon-search:hover{
+    cursor: pointer;
+}
+.top-content-icon-search-img{
+    width: 45px;
+    height: 45px;
+    background-image: url(/public/images/OSU_icon_magnifyingglass_01_1.png);
+    background-size: cover;
+}
