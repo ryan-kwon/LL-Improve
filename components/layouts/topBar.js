@@ -1,6 +1,6 @@
 import React from "react";
 
-import DataFetcher from "./messages";
+// import DataFetcher from "./messages";
 
 import styles from "./styles/topBar.css";
 // import searchIcon from './public/images/OSU_icon_magnifyingglass_01_1.png';
