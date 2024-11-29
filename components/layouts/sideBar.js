@@ -1,5 +1,7 @@
 import React from "react";
 
+import Dashboard from "../dashboard/dashboard";
+
 import styles from "./styles/sideBar.css";
 
 const preloadedContent = {};

@@ -9,9 +9,9 @@ function Dashboard({children}){
                 <h1>Dashboard</h1>
                 <p>[insert date]</p>
             </div>
-            <div>
+            {/* <div>
                 {children}
-            </div>
+            </div> */}
         </div>
     );
 };
