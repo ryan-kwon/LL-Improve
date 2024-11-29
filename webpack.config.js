@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: "/", // Ensure all paths are resolved relative to root
   },
   module: {
     rules: [
@@ -27,8 +28,14 @@ module.exports = {
       template: './public/index.html',
     }),
   ],
+  mode: "development",
   devServer: {
-    static: path.join(__dirname, 'dist'),
+    historyApiFallback: true, // Fallback to index.html for all routes
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true, // Enable gzip compression for better performance
     port: 3000,
+    open: true,
   },
 };
