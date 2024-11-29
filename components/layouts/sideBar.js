@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Dashboard from "../dashboard/dashboard";
 import Clubs from "../clubs/clubs";
@@ -29,21 +30,6 @@ function SideBar({ onNavigate }){
     onNavigate(<Component />); // Render the component
   };
 
-  // const getContentForPath = (path) => {
-  //   switch (path) {
-  //     case "/dashboard":
-  //       return <div>Dashboard Content</div>;
-  //     case "/clubs":
-  //       return <div>Clubs Content</div>;
-  //     case "/calendar":
-  //       return <div>Calendar Content</div>;
-  //     case "/tasks":
-  //       return <div>Task Content</div>;
-  //     default:
-  //       return <div>Loading...</div>;
-  //   }
-  // };
-
   return (
     <div className="side-content">
       <a className='logo-link'>
@@ -51,7 +37,22 @@ function SideBar({ onNavigate }){
       </a>
       <ul className='side-tabs'>
         <li id='side-tab-menu-item-active' className='side-tabs-menu-item'>
-          <a
+          <Link
+            role="button"
+            to="/dashboard"
+            onMouseEnter={() =>
+              handleHover("/dashboard", () => import("../dashboard/dashboard"))
+            }
+            onClick={(e) =>
+              handleClick(e, "/dashboard", () => import("../dashboard/dashboard"))
+            }
+          >
+            <div id='side-tabs-menu-img'>
+              <img src=''></img>
+            </div>
+            <div className='side-tabs-menu-text'>Dashboard</div>
+          </Link>
+          {/* <a
             role="button"
             href="/dashboard"
             onMouseEnter={() => handleHover("/dashboard", () => import("../dashboard/dashboard"))}
@@ -63,10 +64,23 @@ function SideBar({ onNavigate }){
               <img src=''></img>
             </div>
             <div className='side-tabs-menu-text'>Dashboard</div>
-          </a>
+          </a> */}
         </li>
         <li id='side-tab-menu-item-active' className='side-tabs-menu-item'>
-          <a
+          <Link
+            role="button"
+            to="/clubs"
+            onMouseEnter={() => handleHover("/clubs", () => import("../clubs/clubs"))}
+            onClick={(e) =>
+              handleClick(e, "/clubs", () => import("../clubs/clubs"))
+            }
+          >
+            <div id='side-tabs-menu-img'>
+              <img src=''></img>
+            </div>
+            <div className='side-tabs-menu-text'>Clubs</div>
+          </Link>
+          {/* <a
             role="button"
             href="/clubs"
             onMouseEnter={() => handleHover("/clubs", () => import("../clubs/clubs"))}
@@ -78,7 +92,7 @@ function SideBar({ onNavigate }){
               <img src=''></img>
             </div>
             <div className='side-tabs-menu-text'>Clubs</div>
-          </a>
+          </a> */}
         </li>
         <li id='side-tab-menu-item-active' className='side-tabs-menu-item'>
           <a
