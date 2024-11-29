@@ -8,11 +8,16 @@ import ErrorBoundary from './errorboundary';
 
 import styles from "./styles/style.css"
 
+import { supabase } from '../supabase';
+
+
 
 const container = document.getElementById("root");
 const root = createRoot(container); // Create a root for rendering
 
 root.render(
+
+  
   <ErrorBoundary>
     <BrowserRouter>
       <Layout />
