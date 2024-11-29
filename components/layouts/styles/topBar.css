@@ -26,6 +26,7 @@
     height: 90px;
     border: 1px solid #252525;
     border-radius: 50px;
+    box-sizing: border-box;
     float: left;
 
     display: flex;
@@ -35,9 +36,12 @@
 .top-content-icon-container li:not(:last-child) {
     margin-right: 20px;
 }
-.top-content-icon-search:hover{
+.top-content-icon-container li:hover{
     cursor: pointer;
+    border-width: 2px;
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,.25);
 }
+
 .top-content-icon-search-img{
     width: 45px;
     height: 45px;
