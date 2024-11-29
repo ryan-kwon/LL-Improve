@@ -1,46 +1,48 @@
 import React from "react";
 
 import Dashboard from "../dashboard/dashboard";
+import Clubs from "../clubs/clubs";
 
 import styles from "./styles/sideBar.css";
 
-const preloadedContent = {};
+const preloadedComponents = {};
 
 function SideBar({ onNavigate }){
-  const prefetchContent = (path) => {
-    if (!preloadedContent[path]) {
-      console.log(`Pre-loading content for ${path}`);
-      // Simulate pre-loading content
-      preloadedContent[path] = getContentForPath(path);
+  const prefetchComponent = async (path, componentImport) => {
+    if (!preloadedComponents[path]) {
+      console.log(`Preloading component for ${path}`);
+      preloadedComponents[path] = (await componentImport()).default;
     }
   };
 
-  const handleHover = (path) => {
-    if (!preloadedContent[path]) {
-      prefetchContent(path); // Preload only if not already preloaded
+  const handleHover = (path, componentImport) => {
+    if (!preloadedComponents[path]) {
+      prefetchComponent(path, componentImport); // Preload only once
     }
   };
 
-  const handleClick = (event, path) => {
+  const handleClick = async (event, path, componentImport) => {
     event.preventDefault();
     window.history.pushState({}, "", path); // Update URL without reload
-    onNavigate(preloadedContent[path]); // Use preloaded content
+    const Component =
+      preloadedComponents[path] || (await componentImport()).default;
+    onNavigate(<Component />); // Render the component
   };
 
-  const getContentForPath = (path) => {
-    switch (path) {
-      case "/dashboard":
-        return <div>Dashboard Content</div>;
-      case "/clubs":
-        return <div>Clubs Content</div>;
-      case "/calendar":
-        return <div>Calendar Content</div>;
-      case "/tasks":
-        return <div>Task Content</div>;
-      default:
-        return <div>Loading...</div>;
-    }
-  };
+  // const getContentForPath = (path) => {
+  //   switch (path) {
+  //     case "/dashboard":
+  //       return <div>Dashboard Content</div>;
+  //     case "/clubs":
+  //       return <div>Clubs Content</div>;
+  //     case "/calendar":
+  //       return <div>Calendar Content</div>;
+  //     case "/tasks":
+  //       return <div>Task Content</div>;
+  //     default:
+  //       return <div>Loading...</div>;
+  //   }
+  // };
 
   return (
     <div className="side-content">
@@ -52,8 +54,10 @@ function SideBar({ onNavigate }){
           <a
             role="button"
             href="/dashboard"
-            onMouseEnter={() => handleHover("/dashboard")} // Pre-load on hover
-            onClick={(e) => handleClick(e, "/dashboard")}
+            onMouseEnter={() => handleHover("/dashboard", () => import("../dashboard/dashboard"))}
+            onClick={(e) =>
+              handleClick(e, "/dashboard", () => import("../dashboard/dashboard"))
+            }
           >
             <div id='side-tabs-menu-img'>
               <img src=''></img>
@@ -65,8 +69,10 @@ function SideBar({ onNavigate }){
           <a
             role="button"
             href="/clubs"
-            onMouseEnter={() => handleHover("/clubs")}
-            onClick={(e) => handleClick(e, "/clubs")}
+            onMouseEnter={() => handleHover("/clubs", () => import("../clubs/clubs"))}
+            onClick={(e) =>
+              handleClick(e, "/clubs", () => import("../clubs/clubs"))
+            }
           >
             <div id='side-tabs-menu-img'>
               <img src=''></img>
@@ -78,8 +84,8 @@ function SideBar({ onNavigate }){
           <a
             role="button"
             href="/your-club"
-            onMouseEnter={() => handleHover("/your-club")}
-            onClick={(e) => handleClick(e, "/your-club")}
+            // onMouseEnter={() => handleHover("/your-club")}
+            // onClick={(e) => handleClick(e, "/your-club")}
           >
             <div id='side-tabs-menu-img'>
               <img src=''></img>
@@ -91,8 +97,8 @@ function SideBar({ onNavigate }){
           <a
             role="button"
             href="/calendar"
-            onMouseEnter={() => handleHover("/calendar")}
-            onClick={(e) => handleClick(e, "/calendar")}
+            // onMouseEnter={() => handleHover("/calendar")}
+            // onClick={(e) => handleClick(e, "/calendar")}
           >
             <div id='side-tabs-menu-img'>
               <img src=''></img>
@@ -104,8 +110,8 @@ function SideBar({ onNavigate }){
           <a
             role="button"
             href="/tasks"
-            onMouseEnter={() => handleHover("/tasks")}
-            onClick={(e) => handleClick(e, "/tasks")}
+            // onMouseEnter={() => handleHover("/tasks")}
+            // onClick={(e) => handleClick(e, "/tasks")}
           >
             <div id='side-tabs-menu-img'>
               <img src=''></img>
