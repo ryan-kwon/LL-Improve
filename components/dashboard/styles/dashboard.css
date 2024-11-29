@@ -5,4 +5,11 @@
 .dashboard-top-container{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    height: 50px;
+}
+
+.dashboard-top-container p {
+    font-size: larger;
 }

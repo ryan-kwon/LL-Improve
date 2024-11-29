@@ -1,5 +1,6 @@
 a { text-decoration: none; }
-h1{margin: 0;}
+h1, p{margin: 0;}
+p{ color: #808080;}
 ul{ 
     padding: 0;
     margin: 0;
