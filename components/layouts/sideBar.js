@@ -2,28 +2,42 @@ import React from "react";
 
 import styles from "./styles/sideBar.css";
 
-
+const preloadedContent = {};
 
 function SideBar({ onNavigate }){
-  const preFetchContent = path => {
-    switch(path){
-      case "/dashboard":
-        return <div>Dashboard</div>;
-      case "/clubs":
-        return <div>clubs</div>;
-      case "/calendar":
-        return <div>calendar</div>;
-      case "/tasks":
-        return <div>tasks</div>;
-      default:
-        return <div>Loading..</div>;
+  const prefetchContent = (path) => {
+    if (!preloadedContent[path]) {
+      console.log(`Pre-loading content for ${path}`);
+      // Simulate pre-loading content
+      preloadedContent[path] = getContentForPath(path);
     }
   };
 
-  const handleClick = (event, path, content) => {
+  const handleHover = (path) => {
+    if (!preloadedContent[path]) {
+      prefetchContent(path); // Preload only if not already preloaded
+    }
+  };
+
+  const handleClick = (event, path) => {
     event.preventDefault();
     window.history.pushState({}, "", path); // Update URL without reload
-    onNavigate(content); // Update content in Layout
+    onNavigate(preloadedContent[path]); // Use preloaded content
+  };
+
+  const getContentForPath = (path) => {
+    switch (path) {
+      case "/dashboard":
+        return <div>Dashboard Content</div>;
+      case "/clubs":
+        return <div>Clubs Content</div>;
+      case "/calendar":
+        return <div>Calendar Content</div>;
+      case "/tasks":
+        return <div>Task Content</div>;
+      default:
+        return <div>Loading...</div>;
+    }
   };
 
   return (
@@ -36,9 +50,8 @@ function SideBar({ onNavigate }){
           <a
             role="button"
             href="/dashboard"
-            onClick={(e) =>
-              handleClick(e, "/dashboard", <div>Dashboard Content</div>)
-            }
+            onMouseEnter={() => handleHover("/dashboard")} // Pre-load on hover
+            onClick={(e) => handleClick(e, "/dashboard")}
           >
             <div id='side-tabs-menu-img'>
               <img src=''></img>
@@ -50,7 +63,8 @@ function SideBar({ onNavigate }){
           <a
             role="button"
             href="/clubs"
-            onClick={(e) => handleClick(e, "/clubs", <div>Clubs</div>)}
+            onMouseEnter={() => handleHover("/clubs")}
+            onClick={(e) => handleClick(e, "/clubs")}
           >
             <div id='side-tabs-menu-img'>
               <img src=''></img>
@@ -60,9 +74,10 @@ function SideBar({ onNavigate }){
         </li>
         <li id='side-tab-menu-item-active' className='side-tabs-menu-item'>
           <a
-            role='button'
-            href=''
-            onClick={(e) => handleClick(e, "/[your club]", <div>Your Club</div>)}  
+            role="button"
+            href="/your-club"
+            onMouseEnter={() => handleHover("/your-club")}
+            onClick={(e) => handleClick(e, "/your-club")}
           >
             <div id='side-tabs-menu-img'>
               <img src=''></img>
@@ -72,9 +87,10 @@ function SideBar({ onNavigate }){
         </li>
         <li id='side-tab-menu-item-active' className='side-tabs-menu-item'>
           <a
-            role='button' 
-            href=''
-            onClick={(e) => handleClick(e, "/Calendar", <div>Calendar</div>)}
+            role="button"
+            href="/calendar"
+            onMouseEnter={() => handleHover("/calendar")}
+            onClick={(e) => handleClick(e, "/calendar")}
           >
             <div id='side-tabs-menu-img'>
               <img src=''></img>
@@ -84,9 +100,10 @@ function SideBar({ onNavigate }){
         </li>
         <li id='side-tab-menu-item-active' className='side-tabs-menu-item'>
           <a
-            role='button' 
-            href=''
-            onClick={(e) => handleClick(e, "/Task", <div>Task</div>)}
+            role="button"
+            href="/tasks"
+            onMouseEnter={() => handleHover("/tasks")}
+            onClick={(e) => handleClick(e, "/tasks")}
           >
             <div id='side-tabs-menu-img'>
               <img src=''></img>
