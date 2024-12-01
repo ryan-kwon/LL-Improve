@@ -1,0 +1,38 @@
+.userapps-container{
+    width: 360px;
+    height: fit-content;
+
+    box-sizing: border-box;
+    border: 1px solid #B3B3B3;
+    border-radius: 15px;
+
+    padding: 30px;
+
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+.userapps-container-h1{
+    margin-bottom: 30px;
+    /* font-weight: bold;
+    */
+    font-size: x-large; 
+}
+.userapps-apps-container{
+    margin-bottom: 30px;
+}
+
+.userapps-allappslink-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.userapps-allappslink-img{
+    width: 30px;
+    height: 30px;
+
+    margin-right: 10px;
+}
+.userapps-allappslink-h3:hover{
+    text-decoration: underline;
+}
