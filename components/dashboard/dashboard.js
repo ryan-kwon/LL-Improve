@@ -1,5 +1,7 @@
 import React from "react";
 
+import UserApps from "./userapps";
+
 import styles from "./styles/dashboard.css";
 
 function formatDate() {
@@ -43,9 +45,10 @@ function Dashboard({children}){
                 <h1>Dashboard</h1>
                 <p>It's {formatDate()}</p>
             </div>
-            {/* <div>
-                {children}
-            </div> */}
+            <div>
+                {/* {children} */}
+                <UserApps />
+            </div>
         </div>
     );
 };
