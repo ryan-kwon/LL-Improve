@@ -1,5 +1,6 @@
-.dashboard-content{
+.dashboard-container{
     margin: 100px;
+
 }
 
 .dashboard-top-container{
@@ -9,7 +10,12 @@
 
     height: 50px;
 }
-
 .dashboard-top-container p {
     font-size: larger;
+}
+
+.dashboard-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }

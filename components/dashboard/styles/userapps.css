@@ -1,5 +1,6 @@
 .userapps-container{
     width: 360px;
+    height: fit-content;
 
     box-sizing: border-box;
     border: 1px solid #B3B3B3;

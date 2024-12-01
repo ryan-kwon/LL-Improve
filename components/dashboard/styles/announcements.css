@@ -1,0 +1,68 @@
+.dashannouncements-container{
+    width: 360px;
+    height: fit-content;
+
+    box-sizing: border-box;
+    border: 1px solid #B3B3B3;
+    border-radius: 15px;
+
+    padding: 30px;
+}
+
+.dashannouncements-top{
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.dashannouncements-container-h1{
+    font-size: x-large; 
+}
+.dashannouncements-top-indicators-container{
+    display: inherit;
+}
+.slide-indicators {
+    color: #808080;
+}
+.dashannouncements-slide-control-container{
+    display: inherit;
+}
+.dashannouncements-slide-control{
+    color: #808080;
+    background:transparent;
+    border:none;
+}
+.dashannouncements-slide-control:hover{
+    cursor: pointer;
+    color: #252525;
+}
+
+
+.dashannouncements-slide{
+    /* margin-bottom: 30px; */
+    overflow: hidden;
+}
+.dashannouncements-slide-inner{
+    width: fit-content;
+    height: fit-content;
+
+    box-sizing: border-box;
+    border: 1px solid #B3B3B3;
+    border-radius: 15px;
+
+    padding: 15px;
+
+    transition: opacity 0.5s ease-in-out;
+}
+.dashannouncements-slide-inner:hover{
+    cursor: pointer;
+    border-color: #017DC3;
+    border-width: 2px;
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,.25); 
+    /* the shadow border isnt rounding??? kinda?? */
+}
+.dashannouncements-slide-inner h3{
+    margin-bottom: 10px;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 
 import UserApps from "./userapps";
+import DashboardAnnouncements from "./announcements";
 
 import styles from "./styles/dashboard.css";
 
@@ -40,14 +41,15 @@ function Dashboard({children}){
     const date = new Date();
 
     return(
-        <div className="dashboard-content">
+        <div className="dashboard-container">
             <div className="dashboard-top-container">
                 <h1>Dashboard</h1>
                 <p>It's {formatDate()}</p>
             </div>
-            <div>
+            <div className="dashboard-content">
                 {/* {children} */}
                 <UserApps />
+                <DashboardAnnouncements />
             </div>
         </div>
     );
