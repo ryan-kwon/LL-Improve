@@ -1,0 +1,76 @@
+.userevents-container{
+    width: 360px;
+    height: fit-content;
+
+    box-sizing: border-box;
+    border: 1px solid #B3B3B3;
+    border-radius: 15px;
+
+    padding: 30px;
+}
+
+.userevents-top{
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.userevents-container-h1{
+    font-size: x-large; 
+}
+.userevents-top-indicators-container{
+    display: inherit;
+}
+.slide-indicators {
+    color: #808080;
+}
+.userevents-slide-control-container{
+    display: inherit;
+}
+.userevents-slide-control{
+    color: #808080;
+    background:transparent;
+    border:none;
+}
+.userevents-slide-control:hover{
+    cursor: pointer;
+    color: #252525;
+}
+
+
+.userevents-slide{
+    /* margin-bottom: 30px; */
+    overflow: hidden;
+}
+.userevents-slide-inner{
+    width: fit-content;
+    height: fit-content;
+
+    box-sizing: border-box;
+    border: 1px solid #B3B3B3;
+    border-radius: 15px;
+
+    padding: 15px;
+
+    transition: opacity 0.5s ease-in-out;
+
+    /* opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease; */
+}
+.userevents-slide-inner.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+.userevents-slide-inner:hover{
+    cursor: pointer;
+    border-color: #017DC3;
+    border-width: 2px;
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,.25); 
+    /* the shadow border isnt rounding??? kinda?? */
+}
+.userevents-slide-inner h3{
+    margin-bottom: 10px;
+}
