@@ -2,6 +2,10 @@ html, body {
     height: 100%;
 }
 a { text-decoration: none; }
+a:hover{
+    color: #017DC3;
+    font-weight: bold;
+}
 h1, h2, h3, p{margin: 0;}
 p{ color: #808080;}
 ul{ 

@@ -113,7 +113,7 @@ function SideBar({ onNavigate }){
         <li id='side-tab-menu-item-active' className='side-tabs-menu-item'>
           <Link
             to="/user-club"
-            oneMouseEnte={()=>
+            onMouseEnter={()=>
               handleHover("/user-club", () => import("../userClub/userclub"))
             }
             onClick={(e) =>

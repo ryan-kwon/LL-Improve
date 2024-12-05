@@ -12,12 +12,16 @@ import styles from "./styles/layout.css";
 function Layout(){
     const [content, setContent] = useState(<Dashboard/>);
     const location  = useLocation;
+    const [showHelp, setShowHelp] = useState(false);
+    const passingvar = "var"
 
     useEffect(() => {// Handle dynamic routing based on current location
-        console.log("Current Path:", location.pathname); // Log current path
+        // console.log("Current Path:", location.pathname); // Log current path
         switch (location.pathname) {
             case "/dashboard":
-                setContent(<Dashboard />);
+                // console.log("showHelp in Layout:", showHelp);
+                // console.log("Setting Dashboard content with showHelp:", showHelp);
+                setContent(<Dashboard showHelp={showHelp} setShowHelp={setShowHelp} />);
                 break;
             case "/clubs":
                 setContent(<Clubs />);
@@ -32,10 +36,11 @@ function Layout(){
             //     setContent();
             //     break;
             default:
-                setContent(<Dashboard />);
+                // console.log("showHelp in Layout:", showHelp);
+                setContent(<Dashboard showHelp={showHelp} setShowHelp={setShowHelp} />);
                 // setContent(<div>Page not found</div>); // Fallback for unknown routes
         }
-      }, [location.pathname]);
+      }, [location.pathname, showHelp]);
 
     // const handleNavigation = (newContent) => {
     //     setContent(newContent);
@@ -46,7 +51,14 @@ function Layout(){
             {/* <SideBar onNavigate={handleNavigation} /> */}
             <SideBar onNavigate={setContent} />
             <div className='container'>
-                <TopBar />
+                <TopBar
+                    onHelpClick={() => {
+                        // console.log("Before setShowHelp:", showHelp); // Log current state
+                        setShowHelp((prev) => !prev); // Toggle state
+                        // console.log("After setShowHelp:", !showHelp); // Log the new state
+                    }}
+                />
+                {/* <TopBar onClickBtn={passingvar} /> */}
                 {/* <MainContent /> */}
                 <div className="main_content">
                     {content}

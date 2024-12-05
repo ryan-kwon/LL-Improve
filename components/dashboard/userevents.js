@@ -58,7 +58,7 @@ function UserEvents(){
                 </div>
             </div>
             <div className="userevents-slide" data-ride="slide">
-                <div class="userevents-slide-inner">
+                <div className="userevents-slide-inner">
                 {/* {slides.map((slide, index) => (
                     <div
                         key={index}
