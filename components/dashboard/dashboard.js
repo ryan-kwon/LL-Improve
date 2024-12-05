@@ -5,6 +5,7 @@ import DashboardAnnouncements from "./announcements";
 import UserEvents from "./userevents";
 
 import TopBarHelp from "../topbar/tophelp";
+import TopBarNotifications from "../topbar/topnotifications";
 
 import styles from "./styles/dashboard.css";
 
@@ -61,6 +62,7 @@ function Dashboard({showHelp, setShowHelp}){
                 <UserApps />
                 <ul className="dashboard-content-side">
                     {/* appearance of content is based on toggle conditions from topBar (triggering its "TopBarComponents") */}
+                    <TopBarNotifications />
                     {dashboard_items
                         .filter((item) => item.visible)
                         .map((item) => (

@@ -19,13 +19,13 @@ function TopBar({onHelpClick}){
                     </button>
                 </li>
                 <li className="">
-                    <button onClick={() => {onHelpClick();}}></button>
+                    <button onClick={() => {onHelpClick();}}>Help</button>
                 </li>
                 <li className="">
-                    <button></button>
+                    <button>Mail</button>
                 </li>
                 <li className="">
-                    <button></button>
+                    <button>Profile</button>
                 </li>
             </ul>
         </div>

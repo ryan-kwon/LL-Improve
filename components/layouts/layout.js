@@ -12,7 +12,11 @@ import styles from "./styles/layout.css";
 function Layout(){
     const [content, setContent] = useState(<Dashboard/>);
     const location  = useLocation;
-    const [showHelp, setShowHelp] = useState(false);
+    
+    //theres got to be a generalized way of doing this without the variables affecting each other......
+    const [showHelp, setShowHelp] = useState(false); //for TopBarHelp
+    const [showNotif, setShowNotif] = useState(false); //for TopBarNotification
+    const [showProfile, setShowProfile] = useState(false); //for TopBarProfile
     const passingvar = "var"
 
     useEffect(() => {// Handle dynamic routing based on current location
