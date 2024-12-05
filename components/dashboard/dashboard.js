@@ -2,6 +2,7 @@ import React from "react";
 
 import UserApps from "./userapps";
 import DashboardAnnouncements from "./announcements";
+import UserEvents from "./userevents";
 
 import styles from "./styles/dashboard.css";
 
@@ -49,7 +50,14 @@ function Dashboard({children}){
             <div className="dashboard-content">
                 {/* {children} */}
                 <UserApps />
-                <DashboardAnnouncements />
+                <ul className="dashboard-content-side">
+                  <li className=""><DashboardAnnouncements /></li>
+                  <li className=""><UserEvents /></li>
+                </ul>
+                {/* <div className="dashboard-content-side">
+                  <DashboardAnnouncements />
+                  <UserEvents />
+                </div> */}
             </div>
         </div>
     );
