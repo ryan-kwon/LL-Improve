@@ -58,7 +58,7 @@ function DashboardAnnouncements(){
                 </div>
             </div>
             <div className="dashannouncements-slide" data-ride="slide">
-                <div class="dashannouncements-slide-inner">
+                <div className="dashannouncements-slide-inner">
                     <h3>{slides[currentSlide].title}</h3>
                     <p>{slides[currentSlide].description}</p>
                 </div>

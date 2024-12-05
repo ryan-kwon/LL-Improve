@@ -1,0 +1,78 @@
+.topbarhelp-container{
+    width: 360px;
+    height: fit-content;
+    box-sizing: border-box;
+    border: 1px solid #B3B3B3;
+    border-radius: 15px;
+    padding: 30px;
+
+    list-style: none;
+}
+.topbarhelp-container a{
+    color: #666666;
+}
+.dashboard-content-side .topbarhelp-container-li:not(:last-child){
+    margin-bottom: 30px;
+}
+
+.topbarhelp-container-top{
+    height: 30px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.topbarhelp-container-top-btn{
+    width: 30px;
+    height: 30px;
+    border: none !important;
+    padding: 0;
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #666666;
+}
+.topbarhelp-container-top-btn:hover{
+    cursor: pointer;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.topbar-help-container-helplinks{
+    list-style: none;
+}
+.topbar-help-container-helplinks-ul-li{    
+    height: 30px;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    
+    font-size:larger;
+}
+.topbar-help-container-helplinks-ul-li a{
+    display: flex;
+    align-items: center;
+}
+.topbar-help-container-helplinks-ul-li-img1{
+    max-width: 30px;
+    max-height: 30px;
+
+    margin-right: 10px;
+}
+
+
+.topbar-help-container-doclinks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.topbar-help-container-doclinks a{
+    margin-bottom: 10px;
+}
+.topbar-help-container-doclinks a:hover{
+    color: #666666;
+    font-weight: bolder;
+}
